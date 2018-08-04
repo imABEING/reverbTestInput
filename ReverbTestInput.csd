@@ -16,7 +16,7 @@ kpitch init 0.7
 asig1 init 0
 asig2 init 0
 asig1,asig2 ins
-arev, arev2 reverbsc asig1, asig2, 0.850000, 16000, sr, 0.700000, 1
+arev, arev2 reverbsc asig1, asig2, 0.400000, 13000, sr, 0.500000, 1
 outs arev, arev2
 endin
 </CsInstruments>

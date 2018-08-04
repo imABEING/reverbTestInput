@@ -8,31 +8,37 @@
 #include "reverbTestInput.h"
 
 
-FILE *Point;
 char csdFile[256] = "ReverbTestInput.csd";
 
 
 class reverbTest {
-    int x, y;
+    FILE *Point;
     float kfeed;
     int kco;
     double kpitch;
+    int *ketch;
 
 public:
     void reverb (float,int,double);
     void heading();
     
+    reverbTest();
+    ~reverbTest();
+    
 };
 
+
+reverbTest::reverbTest() {
+
+}
+reverbTest::~reverbTest() {
+    delete[] ketch;
+}
 
 
 void reverbTest::reverb (float kfeed, int kco, double kpitch)
 {
     
-    
-    //kfeed = 0.8;
-    //kco = 14000;
-    //kpitch = 0.7;
     
     
     Point = fopen(csdFile, "w");
@@ -89,7 +95,7 @@ void reverbTest::heading()
     system("clear");
     cout << "Use with headphones! (Enter 'OK')\n";
     
-    char* dummy;
+    char dummy[2];
     cin >> dummy;
     
     system("clear");
